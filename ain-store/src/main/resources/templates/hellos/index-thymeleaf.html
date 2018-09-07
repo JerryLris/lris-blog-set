@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+</head>
+<body>
+		<div th:each="item : ${list}"> 
+			<h1>这是标题：${item.title}</h1>
+			<p>这是作者：${item.name}</p>
+			<a>这是内容：${item.detail}</a>
+		</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+INSERT INTO `blog`.`hello` (`id`, `title`, `welcome`) VALUES ('1', 'biaoti---', 'welcome-welcome');
+INSERT INTO `blog`.`hello` (`id`, `title`, `welcome`) VALUES ('12', 'biaoti---222', 'welcome-welcome222');

@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title th:text="${helloModel.title}">hellos : View</title>
+</head>
+<body>
+	<div th:replace="~{hellos/common/header :: header}">...</div>
+	<h3 th:text="${helloModel.title}">Welcome to lris.com</h3>
+	<div>
+		<a href="/hello/lists">返回主页</a>
+	</div>
+	<div>
+		<p>
+			<strong>ID:</strong><span id="id" th:text="${helloModel.hello.id}">123</span>
+		</p>
+		<p>
+			<strong>Title:</strong><span id="title"
+				th:text="${helloModel.hello.title}">lris</span>
+		</p>
+		<p>
+			<strong>Welcome:</strong><span id="welcome"
+				th:text="${helloModel.hello.welcome}">30</span>
+		</p>
+	</div>
+
+	<div>
+		<a th:href="@{'/hello/delete/' + ${helloModel.hello.id}}">删除 </a> | 
+		<a th:href="@{'/hello/modify/' + ${helloModel.hello.id}}">修改</a>
+	</div>
+	<div th:replace="~{hellos/common/footer :: footer}">...</div>
+</body>
+</html>

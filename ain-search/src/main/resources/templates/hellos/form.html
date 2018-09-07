@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title th:text="${helloModel.title}">hellos : View</title>
+</head>
+<body>
+<div th:replace="~{hellos/common/header :: header}">...</div>
+<h3 th:text="${helloModel.title}">Welcome to lris.com</h3>
+<div>
+    <a href="/hello/lists">返回主页</a>
+</div>
+<form action="/hello/create" method="POST" th:object="${helloModel.hello}">
+    <input type="hidden" name="id" th:value="*{id}">
+    标题:<br>
+    <input type="text" name="title" th:value="*{title}">
+    <br>
+    欢迎语:<br>
+    <input type="text" name="welcome" th:value="*{welcome}">
+    <input type="submit" value="提交">
+</form>
+<div th:replace="~{hellos/common/footer :: footer}">...</div>
+</body>
+</html>

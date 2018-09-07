@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title th:text="${helloModel.title}">welcome</title>
+</head>
+<body>
+<div th:replace="~{hellos/common/header :: header}">...</div>
+<h3 th:text="${helloModel.title}">Welcome to lris.com</h3>
+<div>
+    <a href="/hello/form">创建欢迎</a>
+</div>
+<table border="1">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Welcome</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${helloModel.helloList.size()} eq 0">
+        <td colspan="3">没有欢迎信息！！</td>
+    </tr>
+    <tr th:each="hello : ${helloModel.helloList}">
+        <td th:text="${hello.id}">1</td>
+        <td th:text="${hello.title}">11</td>
+        <td><a href="view.html" th:href="@{'/hello/' + ${hello.id}}"
+               th:text="${hello.welcome}">lris</a></td>
+    </tr>
+    </tbody>
+</table>
+<div th:replace="~{hellos/common/footer :: footer}">...</div>
+</body>
+</html>
