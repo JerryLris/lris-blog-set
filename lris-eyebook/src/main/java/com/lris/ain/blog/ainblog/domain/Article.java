@@ -19,12 +19,12 @@ public class Article {
 	private long id;//
 	
 	@Column(nullable = false) // 映射为字段，值不能为空
-	private String  categoryId;//
+	private long  categoryId;//
 	
 	@Column() 
 	private String title;//
 	
-	@Column() 
+	@Column(columnDefinition="TEXT")
 	private String content;//
 	
 	@Column() 
@@ -38,11 +38,13 @@ public class Article {
 		this.id = id;
 	}
 
-	public String getCategoryId() {
+
+
+	public long getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(long categoryId) {
 		this.categoryId = categoryId;
 	}
 

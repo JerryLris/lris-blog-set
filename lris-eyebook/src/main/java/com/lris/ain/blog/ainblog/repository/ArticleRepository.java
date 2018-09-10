@@ -1,11 +1,14 @@
 package com.lris.ain.blog.ainblog.repository;
 
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.lris.ain.blog.ainblog.domain.Article;
 
-public interface ArticleRepository extends CrudRepository<Article, Long>{
+public interface ArticleRepository extends JpaRepository<Article, Long>{
 
+	public List<Article> findAllByCategoryId(long categoryId);
 	
 }
